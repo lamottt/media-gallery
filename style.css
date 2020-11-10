@@ -1,0 +1,306 @@
+body{
+  background-color: #46434b;
+}
+/*Navigation*/
+
+.topnav{
+  margin-top: -.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content:center;
+  text-decoration: none;
+  color: #c1c1c1;
+ z-index: 10000;
+ width: 100%;
+}
+.label{
+  font-size: 2rem;
+}
+a.nav-item {
+  position: relative;
+  top: 4px;
+  text-align: center;
+  padding: .75em 0;
+  margin: auto 0;
+  color: var(--rev-text);
+  transition: color 250ms ease-in-out;
+}
+
+
+.trigram{
+  color: #c1c1c1;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+a.nav-item:hover {
+  color: #D1EDF2;
+  cursor: pointer;
+}
+
+/*-- Mobile Nav Queries --*/
+/*--At screens BELOW 768px, hides nav menu items and displays trigram --*/
+@media screen and (max-width: 767px) {
+  .topnav a, .topnav span {display: none;}
+  .topnav a.trigram {display:inherit; position:absolute; right:4%; font-size:2em; padding: .25em; background:var(--prime);}
+}
+/*-- At screens BELOW 768px,  rules for mobile nav--*/
+@media screen and (max-width: 767px) {
+  .topnav.responsive {align-items: center;} /*-- vertically centers--*/
+  .topnav.responsive a, .topnav.responsive span {display:inherit;} /*-- makes menu items visible --*/
+  .topnav.responsive a:first-child {margin-top:1em;} /*-- adds space above first item --*/
+  .topnav.responsive a:not(:last-child) {display:inherit; padding-top:1em;} /*-- makes items visible (but not the trigram) and adds space above them--*/
+  .topnav.responsive a.more {margin-bottom: 1em;} /*-- adds margin below bottom item --*/
+  .topnav.responsive a.trigram {visibility:hidden; transition:none;} /*-- hides trigram when open --*/
+  .topnav.responsive a.trigram:after {content:"\000D7"; visibility:visible; text-indent: -.5em;} /*-- replaces trigram sign with x-sign on mobile. --*/
+}
+/*-- At screens 768px and ABOVE, set normal menu defaults --*/
+@media screen and (min-width: 767px) {
+  .topnav {display: flex; flex-direction: row; justify-content: space-between;}
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container{
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default*/
+.mySlides{
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,.next{
+  cursor: pointer;
+ position: absolute;
+ top: auto;
+ width: auto;
+ margin-top: -22px;
+ padding: 16px;
+ color: darkgrey;
+ font-weight: bold;
+ font-size: 18px;
+ transtions: 0.6s ease;
+ border-radius: 0 3px 3px 0;
+ -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+ user-select: none;
+}
+
+.next{
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+
+.text {
+  color: white;
+  opacity: 100%;
+  font-size: 22px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 15px;
+  width :15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 250ms ease-in-out;
+  opacity: .5;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 767px) {
+  .slideshow-container {display: none;}
+  .dot {display: none;}
+}
+/* Photo Grid*/
+.container{
+  display: grid;
+  grid-template-areas:
+  "photo1 photo2 photo3"
+  "photo4 photo5 photo6"
+  "photo7 photo8 photo9";
+}
+
+.alpha{
+ grid-area: photo1;
+  display: flex;
+  height: 300px;
+    justify-content: center;
+      margin: 1em;
+font-size: 20px;
+}
+
+img {
+  border-radius: 8px;
+  width: 250px;
+  height: 300px;
+  transition: all .3s ease;
+}
+
+
+img:hover{
+  transform: scale(1.1);
+}
+
+.beta{
+ grid-area: photo2;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+.delta{
+ grid-area: photo3;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+.epsilon{
+grid-area: photo4;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+.zeta{
+ grid-area:photo5;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+.eta{
+ grid-area: photo6;
+  display: flex;
+  height:300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+.hop{
+ grid-area: photo7;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+
+.wack{
+ grid-area: photo8;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+.grim{
+ grid-area: photo9;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  margin: 1em;
+  font-size: 20px;
+}
+
+footer{
+  width: 100%;
+  color: lightgrey;
+  text-align: center;
+}
+
+footer a{
+  color: lightgrey;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 767px){
+.container{
+    grid-template-areas:
+    "photo1 photo1"
+    "photo2 photo3"
+    "photo4 photo5"
+    "photo6 photo7"
+    "photo8 photo9";
+}
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    grid-template-areas:
+       "photo1"
+       "photo2"
+       "photo3"
+       "photo4"
+       "photo5"
+       "photo6"
+       "photo7"
+       "photo8"
+       "photo9";
+     }
+}
